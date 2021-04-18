@@ -1,0 +1,108 @@
+
+
+
+
+
+
+
+
+Model
+1. spara/Förvara inlägg= class PostBean{
+
+ }
+
+View= Index.jsp
+1. Visa inoggningsida{
+<Form login> }
+2. Visa inlägg.
+
+Controller= Göra kopplingar till databases.
+1. Inloggning= class Login{
+    checkPassword()
+ }
+2. Skapa Inlägg, radera inlägg= class HandlePosts{
+    createPost()
+    deletePost()
+}
+
+Visa posts som finns i databasen med användarnamn
+spara posts i databas
+spara tag
+
+visa inloggad användare
+spara användare med session, håll användare inloggad
+
+
+                                                    WORK IN PROGRESS
+----------------------------------------------------------------------------------------------------------------------
+Skapa post(
+    Skriv något i textbox
+    Skanna igenom texten. Om den innehåller en tagg t.ex #hej så parse string och lägg taggen i tag databasen.
+)
+
+
+
+lägg till css på loginPage(
+    Borde gå hyfsat snabbt. Kan nog kopiera mycket från huvudsidan.
+)
+                                                        PRIO
+----------------------------------------------------------------------------------------------------------------------
+skapa sökfunktion(
+    skapa textbox för sökning
+    jämför sökningen med tag i databases
+    jämför sökningen med posts i databas
+
+)
+
+Skapa session(
+    Skapa en session där man håller sig inloggad med varje användare
+)
+
+
+
+
+                                                       KLART
+----------------------------------------------------------------------------------------------------------------------
+Visa username med post(
+    gör query Select post, username så att du får ut post med username.
+    Visa det sedan i postboxen
+)
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+SELECT * FROM posts
+INNER JOIN users.users ON users.UserID=posts.UserID
+INNER JOIN tag ON tag.PostID=posts.PostID
+----------------------------------------------------------------------------------------------------------------------
+
+
+servlet = controller
+jsp = view
+SQLconnector = model
+
+All HTML ska vara i JSP
+HttpsSession ska vara i servlet
+SQLUpdate() används istället för executeQuery() när man "INSERT INTO...."
+
+
+
+
+
+
+
+
+
+
+
+
+
